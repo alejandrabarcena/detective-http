@@ -3,41 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>El detective del servidor</title>
+  <title>El detective del servidor 🕵️‍♀️</title>
   <style>
+    :root {
+      --morado: #a66cff;
+      --rosa: #fcb5e1;
+      --lila: #e2d5f8;
+    }
+
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #f8e1f4, #d4c2fc);
+      background: linear-gradient(to right, var(--rosa), var(--lila));
       color: #333;
       padding: 2rem;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      max-width: 700px;
-      margin: 0 auto 1rem;
       line-height: 1.6;
     }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
     .badge {
-      background: #fff;
-      border-radius: 1rem;
       display: inline-block;
+      margin: 1rem auto;
       padding: 0.5rem 1rem;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      color: #8854d0;
-      border: 2px solid #8854d0;
+      border: 2px solid var(--morado);
+      border-radius: 1.2rem;
+      font-weight: bold;
+      color: var(--morado);
+      background-color: white;
+    }
+
+    p, ul {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    section {
+      margin-top: 2rem;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .float-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--morado);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
-  <h1>El detective del servidor</h1>
-  <p>
-    Este proyecto te muestra cómo analizar las respuestas HTTP que los servidores web envían al navegador. Aprendí a usar herramientas como DevTools y plataformas online para revisar códigos de estado, redirecciones, encabezados y caché.
+  <h1>🕵️‍♀️ El detective del servidor</h1>
+  <p style="text-align: center;">
+    Este proyecto analiza cómo los navegadores y servidores web se comunican usando respuestas HTTP. Usé herramientas como DevTools y plataformas online para observar códigos, encabezados, redirecciones y errores como toda una QA pro.
   </p>
-  <span class="badge">Proyecto educativo</span>
+  <div class="badge">📚 Proyecto educativo</div>
+
+  <section>
+    <h2>🌐 Sitios analizados</h2>
+    <ul>
+      <li>🇩🇪 Deutsche Welle</li>
+      <li>🇬🇧 BBC Learning English</li>
+      <li>🇫🇷 TV5Monde</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🛠️ Herramientas utilizadas</h2>
+    <ul>
+      <li>DevTools del navegador (pestaña Network)</li>
+      <li><a href="https://httpstatus.io" target="_blank">httpstatus.io</a></li>
+      <li><a href="https://reqbin.com" target="_blank">reqbin.com</a></li>
+      <li><a href="https://webhook.site" target="_blank">webhook.site</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🔎 Qué se analizó</h2>
+    <ul>
+      <li>Códigos de estado como 200, 301, 404</li>
+      <li>Redirecciones automáticas</li>
+      <li>Encabezados HTTP como content-type, cache-control, etc.</li>
+      <li>Respuestas ante errores (404 personalizados)</li>
+      <li>Políticas de caché</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>💡 Conocimientos obtenidos</h2>
+    <ul>
+      <li>Interpretar respuestas del servidor sin escribir código</li>
+      <li>Analizar red y rendimiento desde el navegador</li>
+      <li>Detectar errores como tester de calidad web</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📎 Publicación</h2>
+    <p>
+      Este proyecto fue creado con HTML, subido a GitHub y publicado usando GitHub Pages. Puedes ver el código y la demo en línea.
+    </p>
+  </section>
+
+  <button class="float-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">🔝</button>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
