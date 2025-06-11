@@ -4,151 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El detective del servidor 🕵️‍♀️</title>
-  <style>
-    :root {
-      --morado: #a66cff;
-      --rosa: #fcb5e1;
-      --lila: #e2d5f8;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, var(--rosa), var(--lila));
-      color: #333;
-      padding: 2rem;
-      line-height: 1.6;
-    }
-
-    h1, h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    .badge {
-      display: inline-block;
-      margin: 1rem auto;
-      padding: 0.5rem 1rem;
-      border: 2px solid var(--morado);
-      border-radius: 1.2rem;
-      font-weight: bold;
-      color: var(--morado);
-      background-color: white;
-    }
-
-    p, ul {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    section {
-      margin-top: 2rem;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.6s ease-out;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .float-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--morado);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.2s ease;
-    }
-
-    .float-btn:hover {
-      transform: scale(1.1);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>🕵️‍♀️ El detective del servidor</h1>
-  <p style="text-align: center;">
-    Este proyecto analiza cómo los navegadores y servidores web se comunican usando respuestas HTTP. Usé herramientas como DevTools y plataformas online para observar códigos, encabezados, redirecciones y errores como toda una QA pro.
+  <p class="intro">
+    Este proyecto explora cómo un servidor responde a solicitudes HTTP desde el navegador.
+    No se escribe código, solo se usan herramientas de inspección como DevTools y plataformas online.
+    Se observa el comportamiento real de páginas web como una QA tester investigadora.
   </p>
   <div class="badge">📚 Proyecto educativo</div>
 
   <section>
     <h2>🌐 Sitios analizados</h2>
     <ul>
-      <li>🇩🇪 Deutsche Welle</li>
-      <li>🇬🇧 BBC Learning English</li>
-      <li>🇫🇷 TV5Monde</li>
+      <li>Deutsche Welle – Sitio de noticias y análisis internacional 🇩🇪</li>
+      <li>BBC Learning English – Plataforma educativa de inglés 🇬🇧</li>
+      <li>TV5Monde – Medio cultural francófono 🇫🇷</li>
     </ul>
   </section>
 
   <section>
     <h2>🛠️ Herramientas utilizadas</h2>
     <ul>
-      <li>DevTools del navegador (pestaña Network)</li>
-      <li><a href="https://httpstatus.io" target="_blank">httpstatus.io</a></li>
-      <li><a href="https://reqbin.com" target="_blank">reqbin.com</a></li>
-      <li><a href="https://webhook.site" target="_blank">webhook.site</a></li>
+      <li>🔍 DevTools del navegador (Network)</li>
+      <li>📡 <a href="https://httpstatus.io" target="_blank">httpstatus.io</a></li>
+      <li>📬 <a href="https://reqbin.com" target="_blank">reqbin.com</a></li>
+      <li>🎯 <a href="https://webhook.site" target="_blank">webhook.site</a></li>
     </ul>
   </section>
 
   <section>
     <h2>🔎 Qué se analizó</h2>
     <ul>
-      <li>Códigos de estado como 200, 301, 404</li>
-      <li>Redirecciones automáticas</li>
-      <li>Encabezados HTTP como content-type, cache-control, etc.</li>
-      <li>Respuestas ante errores (404 personalizados)</li>
-      <li>Políticas de caché</li>
+      <li>Códigos de estado HTTP: 200 (OK), 301 (Redirección), 404 (No encontrado)</li>
+      <li>Redirecciones automáticas visibles en DevTools</li>
+      <li>Encabezados HTTP: tipo de contenido, servidor, control de caché</li>
+      <li>Errores personalizados o estándar (404)</li>
+      <li>Comportamiento de caché en recarga: no-store, caché parcial, etc.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🧪 Simulaciones realizadas</h2>
+    <ul>
+      <li>URLs falsas para probar errores personalizados</li>
+      <li>Reload para observar headers como `Cache-Control` y `ETag`</li>
+      <li>Petición manual con `reqbin` para revisar headers completos</li>
     </ul>
   </section>
 
   <section>
     <h2>💡 Conocimientos obtenidos</h2>
     <ul>
-      <li>Interpretar respuestas del servidor sin escribir código</li>
-      <li>Analizar red y rendimiento desde el navegador</li>
-      <li>Detectar errores como tester de calidad web</li>
+      <li>Identificar códigos de estado HTTP y entender su significado</li>
+      <li>Leer encabezados HTTP y entender cómo responden los servidores</li>
+      <li>Usar herramientas como una tester web profesional</li>
+      <li>Analizar el performance y errores sin programar</li>
     </ul>
   </section>
 
   <section>
-    <h2>📎 Publicación</h2>
+    <h2>🚀 Publicación</h2>
     <p>
-      Este proyecto fue creado con HTML, subido a GitHub y publicado usando GitHub Pages. Puedes ver el código y la demo en línea.
+      El proyecto fue publicado con GitHub Pages, con estructura HTML/CSS/JS.
+      Se puede consultar en línea o como base de análisis para otras tareas de QA.
     </p>
   </section>
 
   <button class="float-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">🔝</button>
 
-  <script>
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => observer.observe(section));
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
